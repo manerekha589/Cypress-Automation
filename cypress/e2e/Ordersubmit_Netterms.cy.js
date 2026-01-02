@@ -34,7 +34,7 @@ describe('Checkout with Net Term - Cypress', () => {
   // ---------------------
   // TEST 2 - Search and add product to cart
   // ---------------------
-  it('searches product and adds to cart', () => {
+  it('Add product to cart and submits the order successfully', () => {
     cy.get('input.input-group-field').click().clear().type(productName)
     cy.get('div.product-search button').click()
 

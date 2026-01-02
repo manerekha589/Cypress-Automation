@@ -2,36 +2,21 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   e2e: {
-    experimentalSessionAndOrigin: true, // ✅ Add here
+    baseUrl: "https://staging-client.dokshop.com",
     setupNodeEvents(on, config) {
-      // implement node event listeners here
-    },
+      // Node events go here
+    }
   },
-});
 
-module.exports = {
-  e2e: {
-    setupNodeEvents(on, config) {
-      // handle screenshot on fail
-      on('after:screenshot', (details) => {
-        console.log('Screenshot taken:', details.path)
-      })
-    },
-    screenshotsFolder: 'cypress/screenshots',
-    videosFolder: 'cypress/videos',
-    video: true,
-    screenshotOnRunFailure: true,
-  },
-};
-
-const { defineConfig } = require("cypress");
-
-module.exports = defineConfig({
-  reporter: 'mochawesome',
+  reporter: "mochawesome",
   reporterOptions: {
-    reportDir: 'cypress/reports',
+    reportDir: "cypress/reports",
     overwrite: false,
     html: true,
-    json: true,
+    json: true
   },
+
+  screenshotsFolder: "cypress/screenshots",
+  videosFolder: "cypress/videos",
+  video: true
 });
