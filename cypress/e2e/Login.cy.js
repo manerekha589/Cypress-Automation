@@ -34,8 +34,10 @@
 
      // Test Case 4: Empty username and password
   it('should show validation error for empty fields', () => {
+  cy.get('#AccessCode').type('Rymes')
   cy.get("button[type='submit']").click()
-  cy.contains('The User Name field is required.\nThe Password field is required.').should('be.visible')
+  cy.contains('The User Name field is required.').should('be.visible')
+  cy.contains('The Password field is required.').should('be.visible')
   })
 
     // Test Case 5: Password masked
