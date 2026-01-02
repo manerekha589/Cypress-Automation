@@ -1,0 +1,16 @@
+{
+  "baseUrl": "https://staging-client.dokshop.com",
+
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "reportDir": "cypress/reports",
+    "overwrite": false,
+    "html": true,
+    "json": true
+  },
+
+  "screenshotsFolder": "cypress/screenshots",
+  "videosFolder": "cypress/videos",
+  "video": true,
+  "screenshotOnRunFailure": true
+}
