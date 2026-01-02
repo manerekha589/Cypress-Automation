@@ -8,3 +8,18 @@ module.exports = defineConfig({
     },
   },
 });
+
+module.exports = {
+  e2e: {
+    setupNodeEvents(on, config) {
+      // handle screenshot on fail
+      on('after:screenshot', (details) => {
+        console.log('Screenshot taken:', details.path)
+      })
+    },
+    screenshotsFolder: 'cypress/screenshots',
+    videosFolder: 'cypress/videos',
+    video: true,
+    screenshotOnRunFailure: true,
+  },
+};
